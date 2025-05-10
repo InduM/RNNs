@@ -1,0 +1,402 @@
+[
+  {
+    "text": "The Berlin Wall fell in 1989.",
+    "label": "History"
+  },
+  {
+    "text": "World War II ended in 1945.",
+    "label": "History"
+  },
+  {
+    "text": "Calculus involves limits, derivatives, and integrals.",
+    "label": "Math"
+  },
+  {
+    "text": "The Great Depression began in 1929.",
+    "label": "History"
+  },
+  {
+    "text": "A function maps inputs to outputs.",
+    "label": "Math"
+  },
+  {
+    "text": "Newton's third law states every action has an equal and opposite reaction.",
+    "label": "Science"
+  },
+  {
+    "text": "The Berlin Wall fell in 1989.",
+    "label": "History"
+  },
+  {
+    "text": "The Great Depression began in 1929.",
+    "label": "History"
+  },
+  {
+    "text": "The derivative of x squared is 2x.",
+    "label": "Math"
+  },
+  {
+    "text": "World War II ended in 1945.",
+    "label": "History"
+  },
+  {
+    "text": "A prime number has exactly two factors.",
+    "label": "Math"
+  },
+  {
+    "text": "The Berlin Wall fell in 1989.",
+    "label": "History"
+  },
+  {
+    "text": "The Roman Empire was founded in 27 BC.",
+    "label": "History"
+  },
+  {
+    "text": "Newton's third law states every action has an equal and opposite reaction.",
+    "label": "Science"
+  },
+  {
+    "text": "The Roman Empire was founded in 27 BC.",
+    "label": "History"
+  },
+  {
+    "text": "The derivative of x squared is 2x.",
+    "label": "Math"
+  },
+  {
+    "text": "Mahatma Gandhi led India to independence through nonviolence.",
+    "label": "History"
+  },
+  {
+    "text": "Sound travels faster in solids than in gases.",
+    "label": "Science"
+  },
+  {
+    "text": "The Berlin Wall fell in 1989.",
+    "label": "History"
+  },
+  {
+    "text": "Energy can neither be created nor destroyed.",
+    "label": "Science"
+  },
+  {
+    "text": "Matrix multiplication is not commutative.",
+    "label": "Math"
+  },
+  {
+    "text": "The French Revolution began in 1789.",
+    "label": "History"
+  },
+  {
+    "text": "Matrix multiplication is not commutative.",
+    "label": "Math"
+  },
+  {
+    "text": "A right triangle has one 90 degree angle.",
+    "label": "Math"
+  },
+  {
+    "text": "A function maps inputs to outputs.",
+    "label": "Math"
+  },
+  {
+    "text": "Energy can neither be created nor destroyed.",
+    "label": "Science"
+  },
+  {
+    "text": "Matrix multiplication is not commutative.",
+    "label": "Math"
+  },
+  {
+    "text": "A function maps inputs to outputs.",
+    "label": "Math"
+  },
+  {
+    "text": "The mitochondria is the powerhouse of the cell.",
+    "label": "Science"
+  },
+  {
+    "text": "Calculus involves limits, derivatives, and integrals.",
+    "label": "Math"
+  },
+  {
+    "text": "Water is composed of two hydrogen atoms and one oxygen atom.",
+    "label": "Science"
+  },
+  {
+    "text": "The Pythagorean theorem states a^2 + b^2 = c^2.",
+    "label": "Math"
+  },
+  {
+    "text": "Atoms are the basic units of matter.",
+    "label": "Science"
+  },
+  {
+    "text": "The Pythagorean theorem states a^2 + b^2 = c^2.",
+    "label": "Math"
+  },
+  {
+    "text": "The Renaissance was a period of cultural revival.",
+    "label": "History"
+  },
+  {
+    "text": "The Declaration of Independence was signed in 1776.",
+    "label": "History"
+  },
+  {
+    "text": "A function maps inputs to outputs.",
+    "label": "Math"
+  },
+  {
+    "text": "The derivative of x squared is 2x.",
+    "label": "Math"
+  },
+  {
+    "text": "Gravity is a force that attracts objects toward Earth.",
+    "label": "Science"
+  },
+  {
+    "text": "Water is composed of two hydrogen atoms and one oxygen atom.",
+    "label": "Science"
+  },
+  {
+    "text": "A prime number has exactly two factors.",
+    "label": "Math"
+  },
+  {
+    "text": "The Pythagorean theorem states a^2 + b^2 = c^2.",
+    "label": "Math"
+  },
+  {
+    "text": "The Cold War lasted from 1947 to 1991.",
+    "label": "History"
+  },
+  {
+    "text": "The Renaissance was a period of cultural revival.",
+    "label": "History"
+  },
+  {
+    "text": "The Declaration of Independence was signed in 1776.",
+    "label": "History"
+  },
+  {
+    "text": "The derivative of x squared is 2x.",
+    "label": "Math"
+  },
+  {
+    "text": "The Renaissance was a period of cultural revival.",
+    "label": "History"
+  },
+  {
+    "text": "The Berlin Wall fell in 1989.",
+    "label": "History"
+  },
+  {
+    "text": "Water is composed of two hydrogen atoms and one oxygen atom.",
+    "label": "Science"
+  },
+  {
+    "text": "The Pythagorean theorem states a^2 + b^2 = c^2.",
+    "label": "Math"
+  },
+  {
+    "text": "The French Revolution began in 1789.",
+    "label": "History"
+  },
+  {
+    "text": "Sound travels faster in solids than in gases.",
+    "label": "Science"
+  },
+  {
+    "text": "World War II ended in 1945.",
+    "label": "History"
+  },
+  {
+    "text": "The Declaration of Independence was signed in 1776.",
+    "label": "History"
+  },
+  {
+    "text": "Water is composed of two hydrogen atoms and one oxygen atom.",
+    "label": "Science"
+  },
+  {
+    "text": "An integral is the area under a curve.",
+    "label": "Math"
+  },
+  {
+    "text": "Photosynthesis occurs in the chloroplasts of plant cells.",
+    "label": "Science"
+  },
+  {
+    "text": "The Cold War lasted from 1947 to 1991.",
+    "label": "History"
+  },
+  {
+    "text": "Photosynthesis occurs in the chloroplasts of plant cells.",
+    "label": "Science"
+  },
+  {
+    "text": "A prime number has exactly two factors.",
+    "label": "Math"
+  },
+  {
+    "text": "Newton's third law states every action has an equal and opposite reaction.",
+    "label": "Science"
+  },
+  {
+    "text": "The Great Depression began in 1929.",
+    "label": "History"
+  },
+  {
+    "text": "Mahatma Gandhi led India to independence through nonviolence.",
+    "label": "History"
+  },
+  {
+    "text": "The periodic table organizes elements by atomic number.",
+    "label": "Science"
+  },
+  {
+    "text": "Newton's third law states every action has an equal and opposite reaction.",
+    "label": "Science"
+  },
+  {
+    "text": "Sound travels faster in solids than in gases.",
+    "label": "Science"
+  },
+  {
+    "text": "Calculus involves limits, derivatives, and integrals.",
+    "label": "Math"
+  },
+  {
+    "text": "The Cold War lasted from 1947 to 1991.",
+    "label": "History"
+  },
+  {
+    "text": "The sum of interior angles of a triangle is 180 degrees.",
+    "label": "Math"
+  },
+  {
+    "text": "The mitochondria is the powerhouse of the cell.",
+    "label": "Science"
+  },
+  {
+    "text": "The periodic table organizes elements by atomic number.",
+    "label": "Science"
+  },
+  {
+    "text": "The mitochondria is the powerhouse of the cell.",
+    "label": "Science"
+  },
+  {
+    "text": "Mahatma Gandhi led India to independence through nonviolence.",
+    "label": "History"
+  },
+  {
+    "text": "The Great Depression began in 1929.",
+    "label": "History"
+  },
+  {
+    "text": "An integral is the area under a curve.",
+    "label": "Math"
+  },
+  {
+    "text": "A right triangle has one 90 degree angle.",
+    "label": "Math"
+  },
+  {
+    "text": "Abraham Lincoln was the 16th president of the United States.",
+    "label": "History"
+  },
+  {
+    "text": "Atoms are the basic units of matter.",
+    "label": "Science"
+  },
+  {
+    "text": "The French Revolution began in 1789.",
+    "label": "History"
+  },
+  {
+    "text": "Newton's third law states every action has an equal and opposite reaction.",
+    "label": "Science"
+  },
+  {
+    "text": "The mitochondria is the powerhouse of the cell.",
+    "label": "Science"
+  },
+  {
+    "text": "The French Revolution began in 1789.",
+    "label": "History"
+  },
+  {
+    "text": "Matrix multiplication is not commutative.",
+    "label": "Math"
+  },
+  {
+    "text": "The Roman Empire was founded in 27 BC.",
+    "label": "History"
+  },
+  {
+    "text": "Atoms are the basic units of matter.",
+    "label": "Science"
+  },
+  {
+    "text": "The French Revolution began in 1789.",
+    "label": "History"
+  },
+  {
+    "text": "The Renaissance was a period of cultural revival.",
+    "label": "History"
+  },
+  {
+    "text": "World War II ended in 1945.",
+    "label": "History"
+  },
+  {
+    "text": "Mahatma Gandhi led India to independence through nonviolence.",
+    "label": "History"
+  },
+  {
+    "text": "DNA carries genetic information.",
+    "label": "Science"
+  },
+  {
+    "text": "The Great Depression began in 1929.",
+    "label": "History"
+  },
+  {
+    "text": "Sound travels faster in solids than in gases.",
+    "label": "Science"
+  },
+  {
+    "text": "A prime number has exactly two factors.",
+    "label": "Math"
+  },
+  {
+    "text": "Matrix multiplication is not commutative.",
+    "label": "Math"
+  },
+  {
+    "text": "An integral is the area under a curve.",
+    "label": "Math"
+  },
+  {
+    "text": "The Declaration of Independence was signed in 1776.",
+    "label": "History"
+  },
+  {
+    "text": "Newton's third law states every action has an equal and opposite reaction.",
+    "label": "Science"
+  },
+  {
+    "text": "Water is composed of two hydrogen atoms and one oxygen atom.",
+    "label": "Science"
+  },
+  {
+    "text": "The Renaissance was a period of cultural revival.",
+    "label": "History"
+  },
+  {
+    "text": "Matrix multiplication is not commutative.",
+    "label": "Math"
+  }
+]
