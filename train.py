@@ -9,15 +9,18 @@ from sklearn.model_selection import train_test_split
 from sklearn.preprocessing import LabelEncoder
 from tqdm import tqdm
 from transformers import GPT2Tokenizer
+import os
 
 # Load a pre-trained tokenizer (you can use any model like GPT-2 or BERT)
+tokenizer = GPT2Tokenizer.from_pretrained('gpt2')
+
+tokenizer.pad_token = tokenizer.eos_token
 
 
 device = torch.device("mps" if torch.backends.mps.is_available() else
                       "cuda" if torch.cuda.is_available() else "cpu")
 
 print("DEVICE: ",device)
-
 
 # Dataset
 class TextDataset(Dataset):
@@ -76,7 +79,6 @@ def load_json(path):
         return json.load(f)
 
 cls_data = load_json("data/classification_data.json")
-    #cls_data = [d for d in cls_data if d["text"].strip()]
 gen_data = load_json("data/generation_data.json")
 
 
@@ -84,8 +86,6 @@ tokenizer = GPT2Tokenizer.from_pretrained("gpt2")
 # Optional: add padding token
 tokenizer.pad_token = tokenizer.eos_token  # GPT-2 doesn't have a pad token, so using EOS token as padding
 
-#tokenizer = SimpleTokenizer()
-#tokenizer.fit([x["text"] for x in cls_data] + [x["prompt"] + " " + x["continuation"] for x in gen_data])
 
 # Split classification data
 cls_train_data, cls_test_data = train_test_split(cls_data, test_size=0.2, random_state=42)
@@ -118,38 +118,73 @@ optimizer = optim.Adam(model.parameters(), lr=1e-3)
 
 
 def train():
-    for epoch in range(5):
+    checkpoint_path = "checkpoint.pt"
+
+    start_epoch = 0
+    loss_history = {"classification": None, "generation": None}
+
+    if os.path.exists(checkpoint_path):
+        print(f"Loading checkpoint from {checkpoint_path}...")
+        checkpoint = torch.load(checkpoint_path)
+
+        model.load_state_dict(checkpoint['model_state_dict'])
+        optimizer.load_state_dict(checkpoint['optimizer_state_dict'])
+
+        loss_history = checkpoint.get("loss", loss_history)
+        start_epoch = checkpoint.get('epoch', 0) + 1
+        print(f"Resumed from epoch {start_epoch} with previous losses")
+        print(f"  Classification loss: {loss_history['classification']:.4f}")
+        print(f"  Generation loss:     {loss_history['generation']:.4f}")
+    else:
+        print("No checkpoint found. Starting fresh training.")
+
+    model.to(device)
+    
+    for epoch in range(start_epoch,20):
         model.train()
+        cls_running_loss = 0.0
+        gen_running_loss = 0.0
         print(f"\nEpoch {epoch+1}")
 
         # Classification training
-        for x, y in tqdm(cls_train_loader, desc="Classification",leave=False):
-            if x is None or y is None:
+        for input, label in tqdm(cls_train_loader, desc="Classification",leave=False):
+            if input is None or label is None:
                 continue  # skip empty batch
-
+            input, label = input.to(device), label.to(device)
             optimizer.zero_grad()
-            out = model(x, task="classify")
-            loss = criterion_cls(out, y)
+            out = model(input, task="classify")
+            loss = criterion_cls(out, label)
             loss.backward()
             optimizer.step()
+            cls_running_loss += loss.item()
 
                 # Generation training
-        for x, y in tqdm(gen_train_loader, desc="Generation"):
+        for prompt, target in tqdm(gen_train_loader, desc="Generation"):
+            prompt, target = prompt.to(device), target.to(device)
             optimizer.zero_grad()
-            out = model(x, task="generate")
-            min_len = min(out.shape[1], y.shape[1]) - 1
+            out = model(prompt, task="generate")
+            min_len = min(out.shape[1], target.shape[1]) - 1
             out = out[:, :min_len, :].reshape(-1, out.shape[-1])
-            y = y[:, 1:min_len+1].reshape(-1)
-            loss = criterion_gen(out, y)
+            target = target[:, 1:min_len+1].reshape(-1)
+            loss = criterion_gen(out, target)
             loss.backward()
             optimizer.step()
+            gen_running_loss += loss.item()
+        # Compute average losses
+        avg_cls_loss = cls_running_loss / len(cls_train_loader)
+        avg_gen_loss = gen_running_loss / len(gen_train_loader)
+
     checkpoint = {
     'model_state_dict': model.state_dict(),
     'optimizer_state_dict': optimizer.state_dict(),
+    'epoch': epoch,
+    'loss': {
+        'classification': avg_cls_loss,
+        'generation': avg_gen_loss
+        }
     }
     torch.save(checkpoint, "checkpoint.pt")
         
-
 
 def test(model, cls_loader, gen_loader, tokenizer, device):
     model.eval()
@@ -182,9 +217,6 @@ def test(model, cls_loader, gen_loader, tokenizer, device):
 if __name__ == "__main__":
     train()
     # Recreate the model and optimizer
-    model = MultiTaskRNN(vocab_size=tokenizer.vocab_size, embed_dim=64, hidden_dim=128, num_classes=3)
-    optimizer = torch.optim.Adam(model.parameters(), lr=1e-3)
-
 # Load the checkpoint
     checkpoint = torch.load("checkpoint.pt")
 
@@ -193,9 +225,6 @@ if __name__ == "__main__":
 
     model.to(device)
 
-    # Optionally resume from specific epoch or loss
-    #start_epoch = checkpoint.get('epoch', 0)
-    #last_loss = checkpoint.get('loss', None)
 
     test(model, cls_test_loader, gen_test_loader, tokenizer, device)
 
